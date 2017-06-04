@@ -1,0 +1,14 @@
+http://www.zi-zhou.com/	www.zi-zhou.html
+http://www.zi-zhou.com/About	About.html
+http://www.zi-zhou.com/About/Contact	Contact.html
+http://www.zi-zhou.com/About/Join	Join.html
+http://www.zi-zhou.com/About/MOM	MOM.html
+http://www.zi-zhou.com/Account/UserLogin	UserLogin.html
+http://www.zi-zhou.com/Account/UserRegister	UserRegister.html
+http://www.zi-zhou.com/Account/UserResetPwd	UserResetPwd.html
+http://www.zi-zhou.com/Home	Home.html
+http://www.zi-zhou.com/Insight	Insight.html
+http://www.zi-zhou.com/Insight?cid=6	Insight¿cid=6.html
+http://www.zi-zhou.com/Insight?cid=8	Insight¿cid=8.html
+http://www.zi-zhou.com/Product	Product.html
+http://www.zi-zhou.com/Upload/1491384366.JPG	1491384366.jpg

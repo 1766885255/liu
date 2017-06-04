@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>资舟投资-中国资本市场最专业的MOM基金</title>
+    <meta name="keywords" content="资舟投资 基金管理 MOM">
+    <meta name="description" content="资舟投资成立于2011年，2014年4月第一批在证券投资基金业协会完成备案。以国际化投资理念，将MOM基金模式带入中国；我们秉承把风险管理放在第一位，在风险可控的基础上追求最大收益的投资理念，以成为中国资本市场上最专业的MOM基金管理人的愿景前行。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="fullscreen=yes,preventMove=no" name="ML-Config">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <script type="text/javascript" src="../public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../public/page/head.js"></script>
+    <script type="text/javascript" src="../public/js/global.js"></script>
+    <script type="text/javascript" src="../public/js/respond.js"></script>
+</head>
+<body class="minbody">
+    <div class="wrapper">
+        <div class="loginP">
+            <!-- head-->
+            <div id="header">
+                <div class="container">
+                    <a href="../Home.html" class="logo"></a>
+                    <div class="displayNav"></div>
+                    <div class="nav">
+                        <div class="v1 mainnav">
+                            <ul>
+                                <li><a href="../Home.html">首页</a></li>
+                                <li>
+                                    <a href="../Product.html">产品</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="smallnav">观点</a>
+                                    <div class="pdtlist">
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="smallnav">关于</a>
+                                    <div class="pdtlist">
+                                        <div class="pdtA">
+                                            <a href="../About.html">公司介绍</a><span></span>
+                                        </div>
+                                        <div class="pdtA">
+                                            <a href="../About/MOM.html">了解MOM</a><span></span>
+                                        </div>
+                                        <div class="pdtA">
+                                            <a href="../About/Join.html">加入我们</a><span></span>
+                                        </div>
+                                        <div class="pdtA">
+                                            <a href="../About/Contact.html">联系我们</a><span></span>
+                                        </div>
+                                    <div class="pdtA">
+                                        <a href="../Insight�cid=8.html">企业文化</a><span></span>
+                                    </div>
+                                    </div>
+                                </li>
+                              <li>
+                                <a href="../Insight�cid=6.html" >公司动态</a>
+                              </li>
+                            </ul>
+
+                        </div>
+                        <div class="v2 mainnav">
+                            <div>
+
+                                <b></b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+            <!-- content-->
+            
+
+
+<div class="bgC">
+    <div class="loginbox">
+        <div class="Wtips" style="display:none;">
+            <span></span>
+        </div>
+        <div class="form-field">
+            <input type="tel" placeholder="手机号" value="" class="Input" id="mobile" size="11">
+        </div>
+        <div class="form-field">
+            <input type="password" placeholder="密码" value="" class="Input" id="password">
+        </div>
+        <div class="form-field mb40">
+            
+            <input type="submit" class="BtnR" id="btnSubmit" value="登录" style=" border: none; width: 300px; font-family:inherit;cursor: pointer;" />
+        </div>
+        <div class="form-field">
+            <a href="UserRegister.html" class="BtnBR">免费注册</a>
+        </div>
+        <div class="form-field">
+            <a href="UserResetPwd.html" class="BtnG">忘记密码</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+
+        //if ($("#status").val() == "-1") {
+        //    $(".loginbox .Wtips").css("display", "block");
+        //    $(".loginbox .Wtips").find("span").html("账户不存在或登录密码出错");
+        //}
+
+        document.onkeydown = function (e) {
+            var theEvent = window.event || e;
+            var code = theEvent.keyCode || theEvent.which;
+            if (code == 13) {
+                $("#btnSubmit").click();
+            }
+        };
+
+        $('#btnSubmit').on('click', function () {
+            if (!login()) {
+                return;
+            }
+            var parm = {
+                mobile: $("#mobile").val(),
+                password: $("#password").val()
+            }
+            $.ajax({
+                type: 'post',
+                url: '/Account/UserLogin',
+                data: parm,
+                success: function (data) {
+                    if (data.error == 0) {
+                        location.href = '/UserCenter';
+                    } else {
+                        $(".loginbox .Wtips").css("display", "block");
+                        $(".loginbox .Wtips").find("span").html("账户不存在或登录密码出错");
+                    }
+                }
+            })
+
+        });
+
+    });
+
+    function login() {
+        var uname = $("#mobile").val();
+        var upass = $("#password").val();
+
+        if (uname == "" || uname == null) {
+            $(".loginbox .Wtips").css("display", "block");
+            $(".loginbox .Wtips span").html("请输入手机号");
+            return false;
+        } else if (upass == "" || upass == null) {
+            $(".loginbox .Wtips").css("display", "block");
+            $(".loginbox .Wtips span").html("请输入密码");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+
+
+        </div>
+    </div>
+    <!--footer-->
+    <div id="footer">
+        <div class="container">
+            <div class="footerNav">
+                <a href="../www.zi-zhou.html">• 首 页</a><a href="../Product.html">• 产 品</a><a href="../Insight.html">• 观 点</a><a href="../About.html">• 关 于</a>
+            </div>
+            <div class="pt15 tc f14">客服电话：400-606-5510</div>
+            <div class="copyRight">© 2015 资舟投资 All rights reserved 北京资舟投资基金管理有限公司 京ICP备15031780号-1</div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var controller = 'Account';
+    if (controller == "UserCenter") {
+        $(".minbody .wrapper").find("div").eq(0).removeClass("loginP");
+        $("body").removeClass("minbody");
+        $("body").attr("id", "body01");
+        $("body").attr("cz-shortcut-listen", true);
+        $("body").find("div").eq(1).removeClass("loginP")
+        $("body").find("div").eq(1).addClass("personInfo");
+    }
+</script>
